@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class start_game : MonoBehaviour
-{
+{   
+    public AudioClip audioClip;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
     }
 
     // Update is called once per frame
@@ -16,8 +19,9 @@ public class start_game : MonoBehaviour
     {   
         if(Input.GetMouseButton(0)){
             
+            audioSource.Play();
             SceneManager.LoadScene("LoadScene");
-   
+            
         }
     }
 }
