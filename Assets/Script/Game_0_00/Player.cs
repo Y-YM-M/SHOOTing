@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * Speed;
+        //rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * Speed;
+        gameObject.transform.position = new Vector3(-2,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,10);
     }
 }
