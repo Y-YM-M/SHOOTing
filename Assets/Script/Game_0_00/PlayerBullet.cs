@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    public float ATK;
+    void OnTriggerEnter2D(Collider2D cld)
     {
-        Debug.Log("pbHIt");
-        
+        if(cld.gameObject.CompareTag("Enemy"))
+        {
+            cld.GetComponent<Enemy>().HP-=ATK;
+            Destroy(gameObject);
+        }
     }
 }
