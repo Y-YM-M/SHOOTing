@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64aa0264c677c3c4d98dbeb34c0f02fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,6 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562dea94b15b8c64b9f98763ae58864d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodRate: 0
-  FoodName: 
+  FoodLv: 0
+  FoodName: Fire
   NumberOfFood: 0

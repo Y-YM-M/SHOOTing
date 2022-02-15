@@ -13,11 +13,14 @@ public class Enemy : MonoBehaviour
     float MaxHP;
     float LastHP;
     GameObject go;
+    Transform tf;
 
     void Start()
     {
-        Debug.Log(EnemyLv);
-        HP=100;//いったん
+        tf=GameObject.Find("Advancer").transform;
+
+        //Debug.Log(Mathf.Pow(1.03f, EnemyLv)*15);
+        HP=Mathf.Pow(1.03f, EnemyLv)*15;
         MaxHP=HP;
     }
     void Update()
@@ -31,7 +34,8 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Kill");
                 PublicStaticStatus.Score+=MaxHP;
                 go=Instantiate(Food,gameObject.transform.position, Quaternion.identity);
-                go.GetComponent<Food>().FoodLv=EnemyLv;
+                go.transform.parent=tf;
+                go.GetComponent<Food>().FoodLv=Mathf.Pow(1.024f, EnemyLv)*10;
                 Destroy(gameObject);
             }
         }
@@ -41,7 +45,7 @@ public class Enemy : MonoBehaviour
     {
         if(cld.gameObject.CompareTag("Player"))
         {
-            Debug.Log("p");
+            Debug.Log("damage");
             GameObject.Find("HPBar").GetComponent<Slider>().value-=HP/MaxHP*0.5f;
             Destroy(gameObject);
         }

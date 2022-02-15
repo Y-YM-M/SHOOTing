@@ -5,17 +5,17 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public float FoodLv;
-    
+
     [SerializeField]
-    string FoodName;
+    string BulletName;
     [SerializeField]
-    int NumberOfFood;
+    int NumberOfBullet;
     void OnTriggerEnter2D(Collider2D cld)
     {
         if(cld.gameObject.CompareTag("Player"))
         {
             Debug.Log("eat");
-            cld.gameObject.GetComponent<Player>().FoodPool.Add((FoodName,FoodLv,NumberOfFood));
+            cld.gameObject.GetComponent<Player>().FoodPool.Add((BulletName,FoodLv,NumberOfBullet));
             Destroy(gameObject);
         }
     }
