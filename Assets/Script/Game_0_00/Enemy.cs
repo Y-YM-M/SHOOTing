@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("damage");
             GameObject.Find("HPBar").GetComponent<Slider>().value-=HP/MaxHP*0.5f;
+            if(GameObject.Find("HPBar").GetComponent<Slider>().value<=0)
+            {
+                SceneManager.LoadScene("ResultScene");
+            }
             Destroy(gameObject);
         }
     }
