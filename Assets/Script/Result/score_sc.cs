@@ -19,7 +19,7 @@ public class score_sc : MonoBehaviour
     void Update()
     {
         MyText.text=""+Mathf.Round(score/10)*10;
-
+        
 
     }
 }
