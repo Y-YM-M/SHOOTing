@@ -926,8 +926,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PossibleEnemy:
-  - {fileID: 4935624576878469253, guid: d07e0dba3b190ca43969ee8b9694736d, type: 3}
-  - {fileID: 1502036114933213661, guid: df54a85dc541927488fc628d7326a786, type: 3}
+  - {fileID: 7949130216760901031, guid: db287f0eed7f03b4c8b6be44427018cc, type: 3}
+  - {fileID: 8915599555251621354, guid: 67db6e95aa5a8c948a65f9466bd3893b, type: 3}
+  - {fileID: 7814441016335643797, guid: 136533dbfd8b33e46879bbcba1444059, type: 3}
+  - {fileID: 6668259730750344644, guid: 6407efabff7823949926c7fd3c4758e1, type: 3}
+  - {fileID: 8992352054909065179, guid: d211b98032b7371459b39596015565ea, type: 3}
+  - {fileID: 7759509159658632151, guid: 08c45b14ee212c5449fdf31abdb78fe8, type: 3}
+  - {fileID: 6249826531504303669, guid: 4ca3390feeb6d0d4399b2093d5c0317a, type: 3}
 --- !u!4 &1928424864
 Transform:
   m_ObjectHideFlags: 0
@@ -990,7 +995,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2.5
   m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0

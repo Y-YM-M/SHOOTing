@@ -136,4 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodLv: 0
   BulletName: WaterBullet
-  NumberOfBullet: 10
+  NumberOfBullet: 50
