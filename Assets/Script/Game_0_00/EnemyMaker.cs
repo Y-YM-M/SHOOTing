@@ -45,8 +45,8 @@ public class EnemyMaker : MonoBehaviour
     }
     void MakeMonster()
     {
-        GameObject go=Instantiate(PossibleEnemy[Random.Range(0,PossibleEnemy.Count)],new Vector3(8,Random.Range(0.0f,9.0f)-4.5f,0), Quaternion.identity);
+        GameObject go=Instantiate(PossibleEnemy[Random.Range(0,PossibleEnemy.Count)],new Vector3(9.5f,Random.Range(0.0f,9.0f)-4.5f,0), Quaternion.identity);
         go.transform.parent=tf;
-        go.GetComponent<Enemy>().EnemyLv=Time.time*Random.Range(0.8f,1.0f);
+        go.GetComponent<Enemy>().EnemyLv=(Time.time-PublicStaticStatus.StartTime)*Random.Range(0.8f,1.0f);
     }
 }

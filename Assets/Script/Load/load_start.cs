@@ -19,6 +19,8 @@ public class load_start : MonoBehaviour
         if (time >= 2f)
         {   
             Debug.Log(time);
+            PublicStaticStatus.StartTime=Time.time;
+            PublicStaticStatus.Score=0;
             SceneManager.LoadScene("Game_0_00");
         }
     }

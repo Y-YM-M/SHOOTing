@@ -136,4 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodLv: 0
   BulletName: FireBullet
-  NumberOfBullet: -1
+  NumberOfBullet: 10

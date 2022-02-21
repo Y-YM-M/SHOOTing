@@ -56,18 +56,27 @@ public class Player : MonoBehaviour
             MyPlayerBullet=Instantiate((GameObject)Resources.Load(FoodPool[num].Item1), gameObject.transform.position, Quaternion.identity);
             MyPlayerBullet.GetComponent<PlayerBullet>().ATK=FoodPool[num].Item2;
             MyPlayerBullet.GetComponent<Rigidbody2D>().AddForce(new Vector3((Camera.main.ScreenToWorldPoint(Input.mousePosition).x-transform.position.x),(Camera.main.ScreenToWorldPoint(Input.mousePosition).y-transform.position.y),0).normalized*1000);
+            MyPlayerBullet.GetComponent<Rigidbody2D>().angularVelocity = Mathf.PI*(Random.Range(0,400)-200);
         }
         else if(FoodPool[num].Item1=="FireBullet")
         {
             MyPlayerBullet=Instantiate((GameObject)Resources.Load(FoodPool[num].Item1), gameObject.transform.position, Quaternion.identity);
-            MyPlayerBullet.GetComponent<PlayerBullet>().ATK=FoodPool[num].Item2*3.5f;
+            MyPlayerBullet.GetComponent<PlayerBullet>().ATK=FoodPool[num].Item2*3.0f;
             MyPlayerBullet.GetComponent<Rigidbody2D>().AddForce(new Vector3((Camera.main.ScreenToWorldPoint(Input.mousePosition).x-transform.position.x),(Camera.main.ScreenToWorldPoint(Input.mousePosition).y-transform.position.y),0).normalized*1000);
         }
         else if(FoodPool[num].Item1=="WaterBullet")
         {
             MyPlayerBullet=Instantiate((GameObject)Resources.Load(FoodPool[num].Item1), gameObject.transform.position, Quaternion.identity);
-            MyPlayerBullet.GetComponent<PlayerBullet>().ATK=FoodPool[num].Item2*1.5f;
+            MyPlayerBullet.GetComponent<PlayerBullet>().ATK=FoodPool[num].Item2*1.0f;
             MyPlayerBullet.GetComponent<Rigidbody2D>().AddForce(new Vector3((Camera.main.ScreenToWorldPoint(Input.mousePosition).x-transform.position.x),(Camera.main.ScreenToWorldPoint(Input.mousePosition).y-transform.position.y),0).normalized*1000);
+            MyPlayerBullet.GetComponent<Rigidbody2D>().angularVelocity = Mathf.PI*(Random.Range(0,400)-200);
+        }
+        else if(FoodPool[num].Item1=="WindBullet")
+        {
+            MyPlayerBullet=Instantiate((GameObject)Resources.Load(FoodPool[num].Item1), gameObject.transform.position, Quaternion.identity);
+            MyPlayerBullet.GetComponent<PlayerBullet>().ATK=FoodPool[num].Item2*2.0f;
+            MyPlayerBullet.GetComponent<Rigidbody2D>().AddForce(new Vector3((Camera.main.ScreenToWorldPoint(Input.mousePosition).x-transform.position.x),(Camera.main.ScreenToWorldPoint(Input.mousePosition).y-transform.position.y),0).normalized*1000);
+            MyPlayerBullet.GetComponent<Rigidbody2D>().angularVelocity = Mathf.PI*(Random.Range(0,200)-300);
         }
     }
 }

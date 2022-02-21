@@ -16,8 +16,8 @@ public class PlayerScaler : MonoBehaviour
         if(LastScore!=PublicStaticStatus.Score)
         {
             LastScore=PublicStaticStatus.Score;
-            MyPlayer.transform.localScale=Vector3.one*((Mathf.Pow(PublicStaticStatus.Score,0.2f)+0.2f)/1.2f);
-            gameObject.transform.position=new Vector3((((Mathf.Pow(PublicStaticStatus.Score,0.2f)+0.2f)/1.2f)-1)/2,0,0);
+            MyPlayer.transform.localScale=Vector3.one*((Mathf.Pow(PublicStaticStatus.Score,0.15f)+0.3f)/1.3f);
+            gameObject.transform.position=new Vector3((((Mathf.Pow(PublicStaticStatus.Score,0.15f)+0.3f)/1.3f)-1)/2,0,0);
         }
     }
 }

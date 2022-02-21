@@ -34,9 +34,12 @@ public class Enemy : MonoBehaviour
             {
                 Debug.Log("Kill");
                 PublicStaticStatus.Score+=MaxHP;
-                go=Instantiate(Food,gameObject.transform.position, Quaternion.identity);
-                go.transform.parent=tf;
-                go.GetComponent<Food>().FoodLv=Mathf.Pow(1.024f, EnemyLv)*10;
+                if(Food!=null)
+                {
+                    go=Instantiate(Food,gameObject.transform.position, Quaternion.identity);
+                    go.transform.parent=tf;
+                    go.GetComponent<Food>().FoodLv=Mathf.Pow(1.024f, EnemyLv)*10;
+                }
                 Destroy(gameObject);
             }
         }
