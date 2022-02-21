@@ -10,6 +10,7 @@ public class PlayerBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D cld)
     {
+        
         if(cld.gameObject.CompareTag("Enemy"))
         {
             cld.GetComponent<Enemy>().HP-=ATK;

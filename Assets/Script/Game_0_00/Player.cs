@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player : MonoBehaviour
-{
+{   
+
+
+
+    
     public List<(string,float,int)> FoodPool=new List<(string,float,int)>();
 
     /*[SerializeField]//いったん
@@ -12,14 +17,24 @@ public class Player : MonoBehaviour
     private Sprite spr0;
     [SerializeField]
     private Sprite spr1;
+
+    [SerializeField]
+    private Sprite spr2;
+    
     int num;
     GameObject MyPlayerBullet;
     Rigidbody2D rb;
+
+
+    public AudioClip default_attack;
+    AudioSource audioSource;
 
     void Start()
     {
         rb=gameObject.GetComponent<Rigidbody2D>();
         FoodPool.Add(("NormalBullet",10f,-1));
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -36,6 +51,9 @@ public class Player : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite=spr1;
             //弾の生成
+            
+            audioSource.PlayOneShot(default_attack);
+
             num=Random.Range(0,FoodPool.Count);
             MakeBullet();
             FoodPool[num]=(FoodPool[num].Item1,FoodPool[num].Item2,FoodPool[num].Item3-1);
@@ -48,6 +66,8 @@ public class Player : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite=spr0;
         }
+
+        
     }
     void MakeBullet()
     {

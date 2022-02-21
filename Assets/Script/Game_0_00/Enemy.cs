@@ -5,10 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
-{
+{   
+
     public float EnemyLv;
     public float HP;
 
+    
     [SerializeField]
     private GameObject Food;
     float MaxHP;
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
             LastHP=HP;
 
             if(HP<=0)
-            {
+            {   
                 Debug.Log("Kill");
                 PublicStaticStatus.Score+=MaxHP;
                 if(Food!=null)
@@ -49,6 +51,8 @@ public class Enemy : MonoBehaviour
     {
         if(cld.gameObject.CompareTag("Player"))
         {
+            
+           
             Debug.Log("damage");
             GameObject.Find("HPBar").GetComponent<Slider>().value-=HP/MaxHP*0.5f;
             if(GameObject.Find("HPBar").GetComponent<Slider>().value<=0)
